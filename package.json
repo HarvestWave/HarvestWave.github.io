@@ -17,6 +17,7 @@
   "homepage": "https://github.com/HarvestWave/HarvestWave.github.io#readme",
   "description": "",
   "dependencies": {
-    "firebase": "^9.14.0"
+    "firebase": "^9.14.0",
+    "firebaseui": "^6.0.2"
   }
 }
