@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>display</title>
+
+</head>
+<body>  
+    <h1>JavaScript</h1>  
+    <div id="con">
+    做为一个Web开发师来说，如果你想提供漂亮的网页、令用户满意的上网体验，JavaScript是必不可少的工具。
+    </div>
+    <form>
+       <button οnclick="hidetext()" >hide</button>
+       <button οnclick="showtext()" >show</button>
+    </form>    
+    <script>
+        function hidetext(){  
+        var x = document.getElementById("con");
+        x.style.display = "none";
+        };  
+        function showtext(){  
+         var m = document.getElementById("con");
+         m.style.display="block"; 
+        };
+    </script>
+</body>
+</html> 

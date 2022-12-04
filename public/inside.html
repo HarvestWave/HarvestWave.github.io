@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,10 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="css/cssFile.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -19,11 +16,14 @@
 	
 </div>
 
+<!-- product page -->
 
+<div id="productPage">
 	<!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a type="button" onclick="showproductP();hideindexP()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
+
+    <a type="button" onclick="showproductP();" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="#projects" class="w3-bar-item w3-button">Cart</a>
@@ -31,15 +31,12 @@
     </div>
   </div>
 </div>
-	<!-- End Navbar (sit on top) -->
 
-
-<!-- inside page -->
-<div id="insidePage" style="display:none;">
+<!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
   <!-- Project Section -->
-  <div class="w3-container w3-padding-32">
+  <div class="w3-container w3-padding-32" id="projects">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">NewBalance</h3>
   </div>
 
@@ -123,134 +120,46 @@
 
 <!-- End page content -->
 </div>
-</div>
-
-
-<!-- End inside content -->
-
-<!-- Product content -->
-
-<div id="productPage">
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="img/indexF.jpg" alt="Architecture" width="1500" height="800">
-  <div class="w3-display-topleft w3-text-white" style="padding:240px 48px">
-      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
-      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
-      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DS</b></span> <span class="w3-hide-small w3-text-light-grey">daShoes 2022</span></h1>      
-      <p><a href="#projects" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
-    </div>
-  
-    
-  
-</header>
-
-
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
-
-  <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Get classic!</h3>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">NewBalance</div>
-        <img src="img/NB.jpg" alt="House" style="width:100%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" onclick="showindexP(); hideproductP()">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Nike</div>
-        <img src="img/nike.jpg" alt="House" style="width:100%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Adidas</div>
-        <img src="img/adi.jpg" alt="House" style="width:100%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Toms</div>
-        <img src="img/toms.jpg" alt="House" style="width:100%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Puma</div>
-        <img src="img/puma.jpg" alt="House" style="width:99%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barker</div>
-        <img src="img/ox.png" alt="House" style="width:99%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Vans</div>
-        <img src="img/vans.jpg" alt="House" style="width:99%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Lacoste</div>
-        <img src="img/lac.jpg" alt="House" style="width:99%">
-        <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- End page content -->
-</div>
-
-</div>
-<!-- End Product content -->
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
   <p>Contact us <a href="http://www.im.tku.edu.tw/tw/" title="W3.CSS" target="_blank" class="w3-hover-text-green">網路程式設計第一組</a></p>
 </footer>
+</div>
+
+
 
 <!-- Script -->
 <script>
+  function c21() {
+    var x = document.getElementById("i1");
+    var y = document.getElementById("i2");
+    x.src = y.src;
+  }
+  function c31() {
+    var x = document.getElementById("i1");
+    var y = document.getElementById("i3");
+    x.src = y.src;
+  }
+  function c41() {
+    var x = document.getElementById("i1");
+    var y = document.getElementById("i4");
+    x.src = y.src;
+  }
+  function c51() {
+    var x = document.getElementById("i1");
+    var y = document.getElementById("i5");
+    x.src = y.src;
+  }
+
+</script>
+<script>
 	function hideindexP() {
-	  var x = document.getElementById("insidePage");
+	  var x = document.getElementById("indexPage");
 	  x.style.display = "none";
 	}
 	function showindexP() {
-	  var x = document.getElementById("insidePage");
+	  var x = document.getElementById("indexPage");
 	  x.style.display = "block";
 	}
 	function hideproductP() {
