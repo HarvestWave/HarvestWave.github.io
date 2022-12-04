@@ -34,8 +34,8 @@
 	<!-- End Cart -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="Info">
     <button onclick="closeInfo()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-    <a  class="w3-bar-item w3-button">History</a>
-    <a  class="w3-bar-item w3-button" id="signOut">Sign out</a>
+    <a href="#" class="w3-bar-item w3-button">History</a>
+    <a href="#" class="w3-bar-item w3-button" id="signOut">Sign out</a>
   </div>
 	<!-- Info -->
   	     
@@ -332,9 +332,10 @@ function afterLog() {
 </script>
 <script type="module">
   // Import the functions you need from the SDKs you need
-  import { initializeApp } from "firebase/app";
-  import { getAnalytics } from "firebase/analytics";
-  import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+
+  import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -407,11 +408,13 @@ signInWithPopup(auth, provider)
  });
 
   
+
 <script type="module">
   // Import the functions you need from the SDKs you need
-  import { initializeApp } from "firebase/app";
-  import { getAnalytics } from "firebase/analytics";
-  import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+
+  import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -432,11 +435,10 @@ signInWithPopup(auth, provider)
   const analytics = getAnalytics(app);
   const provider = new GoogleAuthProvider(app);
   const auth = getAuth(app);
-
   signOut.addEventListener('click',(e) => {
    signOut(auth).then(() => {
     // Sign-out successful.
-
+ 
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
