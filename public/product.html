@@ -33,13 +33,24 @@
 	</div>
 	<!-- End Cart -->
 
+	<!-- Info -->
+  	  <div class="w3-dropdown-click">
+	    <button onclick="afterLog()" class="w3-button w3-black">Click me</button>
+	    <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom">
+	      <a href="#" class="w3-bar-item w3-button">History</a>
+	      <a href="#" class="w3-bar-item w3-button" id="signOut">Sign out</a>
+	    </div>
+	  </div>
+	<!-- End Info -->
+
     <a type="button" onclick="showproductP();hideindexP()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
     <a type="button"  class="w3-bar-item w3-button" href="https://harvestwave.github.io">Git</a>
     <a type="button"  class="w3-bar-item w3-button" href="https://dashoes-a68a9.web.app">Firebase</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart</a>
+      <a class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart<i class="fa fa-shopping-cart"></i></a>
       <a id="logtext"  class="w3-bar-item w3-button">Login</a>
+      <a id="logafter" class="w3-bar-item w3-button"onclick="afterLog()" style="display:none"></a>
 
     </div>
   </div>
@@ -258,6 +269,16 @@
 
 <!-- Script -->
 <script>
+function afterLog() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+<script>
 	function openRightMenu() {
 	  document.getElementById("rightMenu").style.display = "block";
 	}
@@ -352,11 +373,14 @@ signInWithPopup(auth, provider)
     // The signed-in user info.
     const user = result.user;
     const logtext = document.getElementById("logtext");
-	  
+    const logafter = document.getElementById("logafter");
+	
 
 	if (user) {
 	  alert(user.displayName);
-	  logtext.innerHTML = user.displayName;
+	  logtext.style.display = "none";
+	  logafter.style.display = "block";
+	  logafter.innerHTML = user.displayName;
 
 
 	} else {
@@ -379,11 +403,30 @@ signInWithPopup(auth, provider)
   });
  });
 
+  
   signOut.addEventListener('click',(e) => {
    signOut(auth).then(() => {
     // Sign-out successful.
+
+    const logtext = document.getElementById("logtext");
+    const logafter = document.getElementById("logafter");
+	  
+
+	  alert("Log out successfully!");
+	  logtext.style.display = "block";
+	  logafter.style.display = "none";
+	  logafter.innerHTML = "";
+
    }).catch((error) => {
-    // An error happened.
+     // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+    alert(errorMessage);
    });
   });
 </script>
