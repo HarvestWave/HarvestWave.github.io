@@ -46,14 +46,14 @@
       <a class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart<i class="fa fa-shopping-cart"></i></a>
       <a id="logtext"  class="w3-bar-item w3-button">Login</a>
       
-      <div class="w3-dropdown-click">  
+      <div class="w3-dropdown-click w3-right">  
         <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:none"></a>
         <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom">
           <a href="#" class="w3-bar-item w3-button">History</a>
-          <a href="#" class="w3-bar-item w3-button" id="signingOut">Sign out</a>
+          <a href="#" class="w3-bar-item w3-button" id="signOut">Sign out</a>
         </div>
       </div>
-
+       <div class="w3-clear"></div>
     </div>
   </div>
 </div>
@@ -406,17 +406,9 @@ signInWithPopup(auth, provider)
  });
 
   
-  const btnLogOut = document.getElementById('signingOut');
-	btnLogOut.onclick = function() {
-	  firebase.auth().signOut().then(function() {
-	    alert('您被逐出紫禁城了');
-	    const user = firebase.auth().currentUser;
-	    console.log(user)
-	  })
-	}
 
 
-  sinngnOut.addEventListener('click',(e) => {
+  signOut.addEventListener('click',(e) => {
    signOut(auth).then(() => {
     // Sign-out successful.
 
