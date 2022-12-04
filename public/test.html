@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>display</title>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
 
-</head>
-<body>  
-    <h1>JavaScript</h1>  
-    <div id="con">
-    做为一个Web开发师来说，如果你想提供漂亮的网页、令用户满意的上网体验，JavaScript是必不可少的工具。
-    </div>
-    <form>
-       <button οnclick="hidetext()" >hide</button>
-       <button οnclick="showtext()" >show</button>
-    </form>    
-    <script>
-        function hidetext(){  
-        var x = document.getElementById("con");
-        x.style.display = "none";
-        };  
-        function showtext(){  
-         var m = document.getElementById("con");
-         m.style.display="block"; 
-        };
-    </script>
+
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+ 
+   
+</div>
+
+     
+<script>
+function openRightMenu() {
+  document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+  document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+     
 </body>
-</html> 
+</html>

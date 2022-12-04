@@ -23,11 +23,22 @@
 	<!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+
+  	<!-- Cart -->
+  	<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+	  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+	  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+	  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+	  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+	</div>
+	<!-- End Cart -->
+
     <a type="button" onclick="showproductP();hideindexP()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Cart</a>
-      <a href="#contact" class="w3-bar-item w3-button" id='login'>Login</a>
+      <a href="#projects" class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart</a>
+      <a id="logtext" href="#contact" class="w3-bar-item w3-button" id='login'>Login</a>
+
     </div>
   </div>
 </div>
@@ -245,6 +256,15 @@
 
 <!-- Script -->
 <script>
+	function openRightMenu() {
+	  document.getElementById("rightMenu").style.display = "block";
+	}
+
+	function closeRightMenu() {
+	  document.getElementById("rightMenu").style.display = "none";
+	}
+</script>
+<script>
   function c21() {
     var x = document.getElementById("i1");
     var y = document.getElementById("i2");
@@ -320,6 +340,7 @@
   const auth = getAuth(app);
 
  login.addEventListener('click',(e) => {
+
 // sign in with popup tab
 signInWithPopup(auth, provider)
   .then((result) => {
@@ -329,8 +350,15 @@ signInWithPopup(auth, provider)
     // The signed-in user info.
     const user = result.user;
 
-    alert(user.displayName);
-    goProduct();   
+
+	if (user) {
+	  alert(user.displayName);
+	} else {
+	  alert(nope);
+	}
+
+    //alert(user.displayName);
+       
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -344,6 +372,7 @@ signInWithPopup(auth, provider)
     alert(errorMessage);
   });
  });
+
   signOut.addEventListener('click',(e) => {
    signOut(auth).then(() => {
     // Sign-out successful.
