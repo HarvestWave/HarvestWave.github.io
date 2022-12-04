@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/cssFile.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="#projects" class="w3-bar-item w3-button">Cart</a>
-      <a href="#contact" class="w3-bar-item w3-button">Profile</a>
+      <a href="#contact" class="w3-bar-item w3-button" id='login'>Login</a>
     </div>
   </div>
 </div>
@@ -125,5 +126,72 @@
   <p>Contact us <a href="http://www.im.tku.edu.tw/tw/" title="W3.CSS" target="_blank" class="w3-hover-text-green">網路程式設計第一組</a></p>
 </footer>
 
+
+<!-- Script -->
+<script>
+	function goProduct() {
+  location.replace("product.html")
+}
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+
+  import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC6i5KvB8zgd0gqLyJ7NVsLWDazzwi5cqk",
+    authDomain: "dashoes-a68a9.firebaseapp.com",
+    projectId: "dashoes-a68a9",
+    storageBucket: "dashoes-a68a9.appspot.com",
+    messagingSenderId: "202899248777",
+    appId: "1:202899248777:web:a62bb5b00d9208ed3d5858",
+    measurementId: "G-0M4NWTWL7P"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const provider = new GoogleAuthProvider(app);
+  const auth = getAuth(app);
+
+ login.addEventListener('click',(e) => {
+// sign in with popup tab
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+
+    alert(user.displayName);
+    goProduct();   
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+    alert(errorMessage);
+  });
+ });
+  signOut.addEventListener('click',(e) => {
+   signOut(auth).then(() => {
+    // Sign-out successful.
+   }).catch((error) => {
+    // An error happened.
+   });
+  });
+</script>
 </body>
 </html>
