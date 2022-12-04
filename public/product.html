@@ -369,10 +369,19 @@ signInWithPopup(auth, provider)
     const user = result.user;
     const logtext = document.getElementById("logtext");
     const logafter = document.getElementById("logafter");
+
+
+    var Cuser = firebase.auth().currentUser;
+    if (Cuser) {
+      // User is signed in.
+      alert('登入成功')
+    } else {
+      // No user is signed in.
+    }
 	
 
 	if (user) {
-	  alert(user.displayName);
+	  alert('Welcome, '+user.displayName+'!');
 	  logtext.style.display = "none";
 	  logafter.style.display = "block";
 	  logafter.innerHTML = user.displayName;
