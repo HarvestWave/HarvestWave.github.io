@@ -32,7 +32,11 @@
 	  <a href="#" class="w3-bar-item w3-button">Link 3</a>
 	</div>
 	<!-- End Cart -->
-
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="Info">
+    <button onclick="closeInfo()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+    <a href="#" class="w3-bar-item w3-button">History</a>
+    <a href="#" class="w3-bar-item w3-button" id="signOut">Sign out</a>
+  </div>
 	<!-- Info -->
   	     
 
@@ -45,15 +49,7 @@
     <div class="w3-right w3-hide-small">
       <a class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart<i class="fa fa-shopping-cart"></i></a>
       <a id="logtext"  class="w3-bar-item w3-button">Login</a>
-      
-      <div class="w3-dropdown-click">  
-        <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:none"></a>
-        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom" style="right:0">
-          <a href="#" class="w3-bar-item w3-button">History</a>
-          <a href="#" class="w3-bar-item w3-button" id="signOut">Sign out</a>
-        </div>
-      </div>
-       <div class="w3-clear"></div>
+      <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:none"></a>
     </div>
   </div>
 </div>
@@ -272,15 +268,12 @@
 <!-- Script -->
 <script>
 function afterLog() {
-  var x = document.getElementById("Demo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
+    document.getElementById("Info").style.display = "block";
   }
-}
-</script>
-<script>
+
+  function closeInfo() {
+    document.getElementById("Info").style.display = "none";
+  }
 	function openRightMenu() {
 	  document.getElementById("rightMenu").style.display = "block";
 	}
