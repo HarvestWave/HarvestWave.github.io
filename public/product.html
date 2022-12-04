@@ -49,7 +49,7 @@
     <div class="w3-right w3-hide-small">
       <a class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart<i class="fa fa-shopping-cart"></i></a>
       <a id="logtext"  class="w3-bar-item w3-button">Login</a>
-      <a id="logafter" class="w3-bar-item w3-button"onclick="afterLog()" style="display:none"></a>
+      <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:none"></a>
 
     </div>
   </div>
@@ -363,8 +363,9 @@ function afterLog() {
 
  logtext.addEventListener('click',(e) => {
 
-	// sign in with popup tab
-	signInWithPopup(auth, provider).then((result) => {
+// sign in with popup tab
+signInWithPopup(auth, provider)
+  .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
@@ -412,7 +413,7 @@ function afterLog() {
 	}
 
 
-  siignOut.addEventListener('click',(e) => {
+  sinngnOut.addEventListener('click',(e) => {
    signOut(auth).then(() => {
     // Sign-out successful.
 
