@@ -19,6 +19,7 @@
   
   <div class="right">
     <button class="social-signin google" id='login'>Log in with Google+</button>
+    <button class="" onclick="goProduct()">Log in with Twitter</button>
   </div>
   <div class="or">OR</div>
 </div>
@@ -52,8 +53,8 @@
   const auth = getAuth(app);
 
 
-function myFunction() {
-  location.replace("product.html")
+function goProduct() {
+  location.replace("https://dashoes-a68a9.web.app/product.html")
 };
 
  login.addEventListener('click',(e) => {
@@ -67,7 +68,7 @@ signInWithPopup(auth, provider)
     const user = result.user;
 
     alert(user.displayName);
-    myFunction();
+    goProduct();
     
     // ...
   }).catch((error) => {
