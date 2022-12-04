@@ -37,7 +37,7 @@
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="#projects" class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart</a>
-      <a id="logtext" href="#contact" class="w3-bar-item w3-button">Login</a>
+      <a id="logtext"  class="w3-bar-item w3-button">Login</a>
 
     </div>
   </div>
@@ -339,7 +339,7 @@
   const provider = new GoogleAuthProvider(app);
   const auth = getAuth(app);
 
- login.addEventListener('click',(e) => {
+ logtext.addEventListener('click',(e) => {
 
 // sign in with popup tab
 signInWithPopup(auth, provider)
@@ -349,12 +349,12 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    const x = document.getElementById("logintext");
+    const logtext = document.getElementById("logtext");
 	  
 
 	if (user) {
 	  alert(user.displayName);
-	  x.innerHTML = user.displayName;
+	  logtext.innerHTML = user.displayName;
 
 
 	} else {
