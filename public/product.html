@@ -371,22 +371,11 @@ signInWithPopup(auth, provider)
     const logafter = document.getElementById("logafter");
 
 
-    var Cuser = firebase.auth().currentUser;
-    if (Cuser) {
-      // User is signed in.
-      alert('登入成功')
-    } else {
-      // No user is signed in.
-    }
-	
-
 	if (user) {
 	  alert('Welcome, '+user.displayName+'!');
 	  logtext.style.display = "none";
 	  logafter.style.display = "block";
 	  logafter.innerHTML = user.displayName;
-
-
 	} else {
 	  alert(nope);
 	}
@@ -438,7 +427,7 @@ signInWithPopup(auth, provider)
   signOut.addEventListener('click',(e) => {
    signOut(auth).then(() => {
     // Sign-out successful.
- 
+
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
