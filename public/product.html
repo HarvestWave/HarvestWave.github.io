@@ -488,12 +488,13 @@ signInWithPopup(auth, provider)
     const logafter = document.getElementById("logafter").innerHTML;
     const userId = push(child(ref(database), logafter)).key;
     const todayDate = new Date().toLocaleString();
-
-    set(ref(database, logafter + userId), {
-    time: todayDate,
-    item: a[i],
-    totalMoney: money,
-   });
+    for(var i=1; i<a.length;i++){
+      set(ref(database, logafter + userId), {
+      time: todayDate,
+      item: a[i],
+      totalMoney: money,
+      });
+    };
    alert('saved');
   });
 </script>
