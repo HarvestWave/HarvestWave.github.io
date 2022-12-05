@@ -5,30 +5,61 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
+<div id="addCart" value="0">
+    <a id="cart1" class="w3-bar-item w3-button">NewBalance</a>
 
 
-<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
-  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
-</div>
+</div> <br>
+      <br> <br>
+      <br>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        
+        <img src="" style="width:200%">
+        <form style="width:150%">
+      
+        <h3 class="w3-border-light-grey" >Size</h3>
+        <input type="radio" name="UserAge" id="nbs1"> 6~7&emsp;
+        <input type="radio" name="UserAge" id="nbs2" checked> 
+        <input type="radio" name="UserAge" id="nbs3"> 8~9 &emsp;   
+        <input type="radio" name="UserAge" id="nbs4"> 9~10 &emsp;  
+        <input type="radio" name="UserAge" id="nbs5"> 10~11 &emsp;
 
-<div class="w3-teal">
-  <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
- 
-   
-</div>
+        <a id="bs1"> 6~7&emsp;</a>
+        <a id="bs2" checked>ffff</a>
+          
+        
+        <br>
+      <br>
+      <br>
+      <input type="button" value="Add to Cart"style="width:100%" onclick="add2Cart()">
+      
+    </form>
+        
+      </div>
+    </div>
 
-     
 <script>
-function openRightMenu() {
-  document.getElementById("rightMenu").style.display = "block";
-}
+// function add2Cart() {
+//   const x = document.getElementById("addCart");
+//     for(var i = 1; i<= 5; i++){
+//     var circle= "nbs"+i;
+//     if (document.getElementById(circle).checked){    
+//       x.innerHTML = circle;
+//     }else{      
+//     };
+//   }   
+//   }
+  function add2Cart() {
+  const x = document.getElementById("addCart");
+  const a=[];
+  a.push(9, 10);
+      
+      x.innerHTML = a[0]
 
-function closeRightMenu() {
-  document.getElementById("rightMenu").style.display = "none";
-}
+  
+  }
+  
 </script>
      
 </body>
