@@ -5,39 +5,10 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
-<div id="addCart" value="0">
-    <a id="cart1" class="w3-bar-item w3-button">NewBalance</a>
-
-
-</div> <br>
-      <br> <br>
-      <br>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        
-        <img src="" style="width:200%">
-        <form style="width:150%">
+<div  style="display: none;" id="gg">123</div>
+<button onclick="hj()" class="">Close &times;</button>
+<button onclick="dj()" class="">Close &times;</button>
       
-        <h3 class="w3-border-light-grey" >Size</h3>
-        <input type="radio" name="UserAge" id="nbs1"> 6~7&emsp;
-        <input type="radio" name="UserAge" id="nbs2" checked> 
-        <input type="radio" name="UserAge" id="nbs3"> 8~9 &emsp;   
-        <input type="radio" name="UserAge" id="nbs4"> 9~10 &emsp;  
-        <input type="radio" name="UserAge" id="nbs5"> 10~11 &emsp;
-
-        <a id="bs1"> 6~7&emsp;</a>
-        <a id="bs2" checked>ffff</a>
-          
-        
-        <br>
-      <br>
-      <br>
-      <input type="button" value="Add to Cart"style="width:100%" onclick="add2Cart()">
-      
-    </form>
-        
-      </div>
-    </div>
 
 <script>
 // function add2Cart() {
@@ -50,12 +21,17 @@
 //     };
 //   }   
 //   }
-  function add2Cart() {
-  const x = document.getElementById("addCart");
-  const a=0;
+  function hj() {
+  const x = document.getElementById("gg");
       
-      x.innerHTML = new Date().toLocaleString();;
+      x.innerHTML = new Date().toLocaleString();
 
+  
+  }
+  function dj() {
+  const x = document.getElementById("gg");
+      
+      x.style.display="block";
   
   }
   
