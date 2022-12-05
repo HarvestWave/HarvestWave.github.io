@@ -15,9 +15,6 @@
 <body>
 
 
-<div id="insideP">
-	
-</div>
 
 
 	<!-- Navbar (sit on top) -->
@@ -27,7 +24,7 @@
   	<!-- Cart -->
   	<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
 	  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-    <button onclick="" class="w3-bar-item w3-button " id="checkOut"><h2>Checkout!</h2></button>
+    <button onclick="" class="w3-bar-item w3-button " id="ttlCart"><h2>Checkout!</h2></button>
     
     <div id="addCart" value=0>
   	  <!-- <a id="cart6" class="w3-bar-item w3-button"><img src="img/NB.jpg" style="height:70px"><input id="carti6"type="hidden" value="NB 10~11">&ensp;NB10~11<button onclick="deleteCart(6);deleteCart1();" class="w3-bar-item w3-button ">&ensp; &emsp; &emsp; &emsp;   - delete &times;</button></a> -->
@@ -37,7 +34,7 @@
 	<!-- End Cart -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="Info">
     <button onclick="closeInfo()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-      <a  class="w3-bar-item w3-button" id="checkOut">History</a>
+      <a  class="w3-bar-item w3-button" onclick="showhistory();hideindexP();hideproductP()" id="checkOut">History</a>
       <a  class="w3-bar-item w3-button" id="signOut">Sign out</a>
   </div>
 	<!-- Info -->
@@ -45,7 +42,7 @@
 
 	<!-- End Info -->
 
-    <a type="button" onclick="showproductP();hideindexP()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
+    <a type="button" onclick="showproductP();hideindexP();hidehistory()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
     <a type="button"  class="w3-bar-item w3-button" href="https://harvestwave.github.io">Git</a>
     <a type="button"  class="w3-bar-item w3-button" href="https://dashoes-a68a9.web.app">Firebase</a>
     <!-- Float links to the right. Hide them on small screens -->
@@ -57,6 +54,22 @@
   </div>
 </div>
 	<!-- End Navbar (sit on top) -->
+
+
+
+
+
+<!-- History -->
+<div id="history">      
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;">
+  <button onclick="" class="w3-bar-item w3-button " id=""><h1 id="timeDate"></h1>total:<h1 id="ttlMoney"></h1>
+  </button>
+  </div>
+</div>
+  <!-- End History -->
+
+
+
 
 
 <!-- inside page -->
@@ -185,7 +198,7 @@
         <div class="w3-display-topleft w3-black w3-padding">NewBalance</div>
         <img id="shoe1" src="img/NB.jpg" alt="House" style="width:100%">
         <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black" onclick="showindexP(); hideproductP()">Buy now <i class="fa fa-shopping-cart"></i></button>
+            <button class="w3-button w3-black" onclick="showindexP(); hidehistory(); hideproductP()">Buy now <i class="fa fa-shopping-cart"></i></button>
         </div>
       </div>
     </div>
@@ -283,6 +296,7 @@ var ttlCart = function(){
     };
   };
   document.getElementById("ttlMoney").innerHTML= money;
+  document.getElementById("addCart").style.display="none";
 }
 </script>
 
@@ -301,7 +315,7 @@ function add2Cart() {
       for(var j = 1; j<= 100; j++){
         var scircle= "cart"+j;
         if(!document.getElementById(scircle)){
-          x.innerHTML=x.innerHTML+'<a id="'+scircle+'" class="w3-bar-item w3-button"><img src="img/NB.jpg" style="height:70px"><input id="carti6"type="hidden" value="NB'+ (i+5)+'~'+(i+6)+'">&ensp;NB'+ (i+5)+'~'+(i+6)+'<button onclick="deleteCart('+j+');deleteCart1();" class="w3-bar-item w3-button ">&ensp; &emsp; &emsp; &emsp;   - delete &times;</button></a>';
+          x.innerHTML=x.innerHTML+'<a id="'+scircle+'" class="w3-bar-item w3-button"><img src="img/NB.jpg" style="height:70px"><input id="carti6"type="hidden" value="NB'+ (i+5)+'~'+(i+6)+'">&ensp;NB'+ (i+5)+'~'+(i+6)+'<button onclick="deleteCart('+j+');" class="w3-bar-item w3-button ">&ensp; &emsp; &emsp; &emsp;   - delete &times;</button></a>';
           break;
         }
       };
@@ -349,6 +363,14 @@ function afterLog() {
 
 </script>
 <script>
+  function hidehistory() {
+    var x = document.getElementById("history");
+    x.style.display = "none";
+  }
+  function showhistory() {
+    var x = document.getElementById("history");
+    x.style.display = "block";
+  }
 	function hideindexP() {
 	  var x = document.getElementById("insidePage");
 	  x.style.display = "none";
