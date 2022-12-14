@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>daShoes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/cssFile.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/98660c98be.js" crossorigin="anonymous"></script>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+</head>
+
+<body>
+
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    	<!-- Cart -->
+    	<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:10px; width: 25%;" id="rightMenu">
+    	  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+        <button  onclick="ttlCart()"  class="w3-bar-item w3-button" ><h2>Checkout!</h2></button>      
+        <div id="addCart">
+      	  <!-- <a id="cart6" class="w3-bar-item w3-button"><img src="img/NB.jpg" style="height:70px"><input id="carti6"type="hidden" value="NB 10~11">&ensp;NB10~11<button onclick="deleteCart(6);deleteCart1();" class="w3-bar-item w3-button ">&ensp; &emsp; &emsp; &emsp;   - delete &times;</button></a> -->
+        </div>
+  	  </div>
+      <!-- End Cart -->
+      <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="Info">
+        <button onclick="closeInfo()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+          <a  class="w3-bar-item w3-button" onclick="hideindex2P();showhistory();hideindexP();hideproductP();closeInfo();hideindex3P();" >History</a>
+          <a href="index.html" class="w3-bar-item w3-button" >Sign out</a>
+      </div>
+      <a type="button" onclick="hideindex2P();showproductP();hideindexP();hidehistory();hideindex3P()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
+      <a type="button"  class="w3-bar-item w3-button" href="https://harvestwave.github.io">Git</a>
+      <a type="button"  class="w3-bar-item w3-button" href="https://dashoes-a68a9.web.app">Firebase</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart<i class="fa fa-shopping-cart"></i></a>
+        <a id="logtext"  class="w3-bar-item w3-button"style="display:block">Login</a>
+        <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:none">Nogi</a>
+      </div>
+    </div>
+  </div>
+  <!-- End Navbar (sit on top) -->
+
+
+
+
+  <!-- History -->
+  <div id="history" style="display:none;">   
+
+    <div class=" w3-bar-block w3-card w3-animate-right" >      
+      <button onclick="" class="w3-bar-item w3-button " id=""><h1 ></h1>total:<h1 ></h1>  </button>
+        <div class="w3-bar-block w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="" alt="結帳" class="w3-left w3-circle w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity" ><a id="timeDate"></a></span>
+          <input id="ttlMoneyC" type="hidden" value="0"><h4 id="ttlMoney"></h4><br>
+          <hr class="w3-clear">
+          <div id="addCartCopy">
+
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- End History -->
+
+
+
+<!-- NIinside page -->
+<div id="insidePage2" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- Project Section -->
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">NewBalance</h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div  class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">></div>
+            <img id="i1" src="img/ni/1.png"  style="width:150%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src=""  style="width:100%">
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="" style="width:200%">
+            <form style="width:150%">
+              <h2>$300</h2>
+              <h3 style="font-size: 20px;" class="w3-border-light-grey" >Size</h3>
+              <input type="radio" name="UserAge" id="nis1"> 6~7&emsp;
+              <input type="radio" name="UserAge" id="nis2" checked> 7~8 &emsp;
+              <input type="radio" name="UserAge" id="nis3"> 8~9 &emsp;   
+              <input type="radio" name="UserAge" id="nis4"> 9~10 &emsp;  
+              <input type="radio" name="UserAge" id="nis5"> 10~11 &emsp;
+              <br><br><br>
+              <input type="button" value="Add to Cart"style="width:100%" onclick="addCartNI()">       
+            </form>  
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding" style="width:45%">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i2" src="img/ni/1.png" alt="House" style="width:99%" onclick="c21()">
+            <div class="w3-display-middle w3-display-hover">   
+              <button class="w3-button w3-black" onclick="c21()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">           
+            <img id="i3" src="img/ni/2.png" alt="House" style="width:99%" onclick="c31()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c31()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i4" src="img/ni/3.png" alt="House" style="width:99%" onclick="c41()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c41()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i5" src="img/ni/4.png" alt="House" style="width:99%" onclick="c51()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c51()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End inside content -->
+
+
+
+  <!-- NBinside page -->
+  <div id="insidePage" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- Project Section -->
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">NIKE</h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div  class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">></div>
+            <img id="i1" src="img/nb/1.png"  style="width:150%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src=""  style="width:100%">
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="" style="width:200%">
+            <form style="width:150%">
+              <h2>$300</h2>
+              <h3 style="font-size: 20px;" class="w3-border-light-grey" >Size</h3>
+              <input type="radio" name="UserAge" id="nbs1"> 6~7&emsp;
+              <input type="radio" name="UserAge" id="nbs2" checked> 7~8 &emsp;
+              <input type="radio" name="UserAge" id="nbs3"> 8~9 &emsp;   
+              <input type="radio" name="UserAge" id="nbs4"> 9~10 &emsp;  
+              <input type="radio" name="UserAge" id="nbs5"> 10~11 &emsp;
+              <br><br><br>
+              <input type="button" value="Add to Cart"style="width:100%" onclick="addCartNB()">       
+            </form>  
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding" style="width:45%">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i2" src="img/nb/1.png" alt="House" style="width:99%" onclick="c21()">
+            <div class="w3-display-middle w3-display-hover">   
+              <button class="w3-button w3-black" onclick="c21()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">           
+            <img id="i3" src="img/nb/2.png" alt="House" style="width:99%" onclick="c31()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c31()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i4" src="img/nb/3.png" alt="House" style="width:99%" onclick="c41()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c41()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i5" src="img/nb/4.png" alt="House" style="width:99%" onclick="c51()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c51()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End inside content -->
+
+
+  <!-- Vansinside page -->
+<div id="insidePage3" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- Project Section -->
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Vans</h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div  class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">></div>
+            <img id="i1" src="img/nv/1.png"  style="width:150%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src=""  style="width:100%">
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="" style="width:200%">
+            <form style="width:150%">
+              <h2>$300</h2>
+              <h3 style="font-size: 20px;" class="w3-border-light-grey" >Size</h3>
+              <input type="radio" name="UserAge" id="nvs1"> 6~7&emsp;
+              <input type="radio" name="UserAge" id="nvs2" checked> 7~8 &emsp;
+              <input type="radio" name="UserAge" id="nvs3"> 8~9 &emsp;   
+              <input type="radio" name="UserAge" id="nvs4"> 9~10 &emsp;  
+              <input type="radio" name="UserAge" id="nvs5"> 10~11 &emsp;
+              <br><br><br>
+              <input type="button" value="Add to Cart"style="width:100%" onclick="addCartNV()">       
+            </form>  
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding" style="width:45%">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i2" src="img/nv/1.png" alt="House" style="width:99%" onclick="c21()">
+            <div class="w3-display-middle w3-display-hover">   
+              <button class="w3-button w3-black" onclick="c21()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">           
+            <img id="i3" src="img/nv/2.png" alt="House" style="width:99%" onclick="c31()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c31()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i4" src="img/nv/3.png" alt="House" style="width:99%" onclick="c41()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c41()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i5" src="img/nv/4.png" alt="House" style="width:99%" onclick="c51()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c51()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End inside content -->
+
+
+
+
+
+  <!-- Product content -->
+  <div id="productPage">
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+      <img class="w3-image" src="img/indexF.jpg" alt="Architecture" width="1500" height="800">
+      <div class="w3-display-topleft w3-text-white" style="padding:240px 48px">
+          <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+          <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DS</b></span> <span class="w3-hide-small w3-text-light-grey">daShoes 2022</span></h1>      
+          <p><a class="w3-button w3-black w3-padding-large w3-large" href="#projects">SHOP NOW</a></p>
+      </div>
+    </header>
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Get classic! $300 each!</h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">NewBalance</div>
+            <img id="shoe1" src="img/NB.jpg" alt="House" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="showindexP(); hidehistory(); hideproductP();hideindex2P();hideindex3P();">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Nike</div>
+            <img id="shoe2" src="img/nike.jpg" alt="House" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="showindex2P(); hideindexP(); hidehistory(); hideproductP();hideindex3P();">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Adidas</div>
+            <img id="shoe3" src="img/adi.jpg" alt="House" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" >Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Toms</div>
+            <img id="shoe4" src="img/toms.jpg" alt="House" style="width:100%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Puma</div>
+            <img id="shoe5" src="img/puma.jpg" alt="House" style="width:99%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Barker</div>
+            <img id="shoe6" src="img/ox.png" alt="House" style="width:99%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Vans</div>
+            <img id="shoe7" src="img/vans.jpg" alt="House" style="width:99%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black" onclick="hideindex2P(); hideindexP(); hidehistory(); hideproductP();showindex3P()">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Lacoste</div>
+            <img id="shoe8" src="img/lac.jpg" alt="House" style="width:99%">
+            <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Product content -->
+
+
+
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-16">
+    <p>Contact us <a href="http://www.im.tku.edu.tw/tw/" title="W3.CSS" target="_blank" class="w3-hover-text-green">網路程式設計第一組</a></p>
+  </footer>
+  <!-- End Footer -->
+
+
+
+  <!-- Script -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+
+  import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+  import { getDatabase, set, ref ,push, child, onValue} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC6i5KvB8zgd0gqLyJ7NVsLWDazzwi5cqk",
+    authDomain: "dashoes-a68a9.firebaseapp.com",
+    databaseURL: "https://dashoes-a68a9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "dashoes-a68a9",
+    storageBucket: "dashoes-a68a9.appspot.com",
+    messagingSenderId: "202899248777",
+    appId: "1:202899248777:web:a62bb5b00d9208ed3d5858",
+    measurementId: "G-0M4NWTWL7P"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const provider = new GoogleAuthProvider(app);
+  const auth = getAuth(app);
+  // Initialize Realtime Database and get a reference to the service
+  const database = getDatabase();
+
+
+ logtext.addEventListener('click',(e) => {
+
+
+// sign in with popup tab
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    const logtext = document.getElementById("logtext");
+    const logafter = document.getElementById("logafter");
+
+
+  if (user) {
+    alert('Welcome, '+user.displayName+'!');
+    logtext.style.display = "none";
+    logafter.style.display = "block";
+    logafter.innerHTML = user.displayName;
+  } else {
+    alert(nope);
+  }
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+    alert(errorMessage);
+  });
+ });
+
+
+  
+</script>
+
+  <script type="text/javascript" src="js/product.js"></script>
+  <script  src="js/db.js"></script>
+
+</body>
+</html>
+
