@@ -35,17 +35,17 @@ html {
       <!-- End Cart -->
       <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="Info">
         <button onclick="closeInfo()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-          <a  class="w3-bar-item w3-button" onclick="showhistory();hideindexP();hideproductP();closeInfo();" >History</a>
+          <a  class="w3-bar-item w3-button" onclick="hideindex2P();showhistory();hideindexP();hideproductP();closeInfo();hideindex3P();" >History</a>
           <a href="index.html" class="w3-bar-item w3-button" >Sign out</a>
       </div>
-      <a type="button" onclick="showproductP();hideindexP();hidehistory()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
+      <a type="button" onclick="hideindex2P();showproductP();hideindexP();hidehistory();hideindex3P()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
       <a type="button"  class="w3-bar-item w3-button" href="https://harvestwave.github.io">Git</a>
       <a type="button"  class="w3-bar-item w3-button" href="https://dashoes-a68a9.web.app">Firebase</a>
       <!-- Float links to the right. Hide them on small screens -->
       <div class="w3-right w3-hide-small">
         <a class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart<i class="fa fa-shopping-cart"></i></a>
-        <a id="logtext"  class="w3-bar-item w3-button"style="display:none">Login</a>
-        <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:block">Nogi</a>
+        <a id="logtext"  class="w3-bar-item w3-button"style="display:block">Login</a>
+        <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:none">Nogi</a>
       </div>
     </div>
   </div>
@@ -55,9 +55,6 @@ html {
 
 
   <!-- History -->
-
-        
-
   <div id="history" style="display:none;">   
 
     <div class=" w3-bar-block w3-card w3-animate-right" >      
@@ -73,18 +70,96 @@ html {
         </div>
     </div>
   </div>
-    <!-- End History -->
+  <!-- End History -->
 
 
 
-
-
-  <!-- inside page -->
-  <div id="insidePage" style="display:none;">
+<!-- NIinside page -->
+<div id="insidePage2" style="display:none;">
     <div class="w3-content w3-padding" style="max-width:1564px">
       <!-- Project Section -->
       <div class="w3-container w3-padding-32">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">NewBalance</h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div  class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">></div>
+            <img id="i1" src="img/ni/1.png"  style="width:150%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src=""  style="width:100%">
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="" style="width:200%">
+            <form style="width:150%">
+              <h2>$300</h2>
+              <h3 style="font-size: 20px;" class="w3-border-light-grey" >Size</h3>
+              <input type="radio" name="UserAge" id="nis1"> 6~7&emsp;
+              <input type="radio" name="UserAge" id="nis2" checked> 7~8 &emsp;
+              <input type="radio" name="UserAge" id="nis3"> 8~9 &emsp;   
+              <input type="radio" name="UserAge" id="nis4"> 9~10 &emsp;  
+              <input type="radio" name="UserAge" id="nis5"> 10~11 &emsp;
+              <br><br><br>
+              <input type="button" value="Add to Cart"style="width:100%" onclick="addCartNI()">       
+            </form>  
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding" style="width:45%">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i2" src="img/ni/1.png" alt="House" style="width:99%" onclick="c21()">
+            <div class="w3-display-middle w3-display-hover">   
+              <button class="w3-button w3-black" onclick="c21()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">           
+            <img id="i3" src="img/ni/2.png" alt="House" style="width:99%" onclick="c31()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c31()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i4" src="img/ni/3.png" alt="House" style="width:99%" onclick="c41()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c41()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i5" src="img/ni/4.png" alt="House" style="width:99%" onclick="c51()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c51()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End inside content -->
+
+
+
+  <!-- NBinside page -->
+  <div id="insidePage" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- Project Section -->
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">NIKE</h3>
       </div>
 
       <div class="w3-row-padding">
@@ -157,6 +232,85 @@ html {
   <!-- End inside content -->
 
 
+  <!-- Vansinside page -->
+<div id="insidePage3" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- Project Section -->
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Vans</h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div  class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">></div>
+            <img id="i1" src="img/nv/1.png"  style="width:150%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src=""  style="width:100%">
+          </div>
+        </div>
+
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="" style="width:200%">
+            <form style="width:150%">
+              <h2>$300</h2>
+              <h3 style="font-size: 20px;" class="w3-border-light-grey" >Size</h3>
+              <input type="radio" name="UserAge" id="nvs1"> 6~7&emsp;
+              <input type="radio" name="UserAge" id="nvs2" checked> 7~8 &emsp;
+              <input type="radio" name="UserAge" id="nvs3"> 8~9 &emsp;   
+              <input type="radio" name="UserAge" id="nvs4"> 9~10 &emsp;  
+              <input type="radio" name="UserAge" id="nvs5"> 10~11 &emsp;
+              <br><br><br>
+              <input type="button" value="Add to Cart"style="width:100%" onclick="addCartNV()">       
+            </form>  
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding" style="width:45%">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i2" src="img/nv/1.png" alt="House" style="width:99%" onclick="c21()">
+            <div class="w3-display-middle w3-display-hover">   
+              <button class="w3-button w3-black" onclick="c21()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">           
+            <img id="i3" src="img/nv/2.png" alt="House" style="width:99%" onclick="c31()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c31()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i4" src="img/nv/3.png" alt="House" style="width:99%" onclick="c41()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c41()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <img id="i5" src="img/nv/4.png" alt="House" style="width:99%" onclick="c51()">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black" onclick="c51()">click&nbsp;<i class="  fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End inside content -->
+
+
 
 
 
@@ -184,7 +338,7 @@ html {
             <div class="w3-display-topleft w3-black w3-padding">NewBalance</div>
             <img id="shoe1" src="img/NB.jpg" alt="House" style="width:100%">
             <div class="w3-display-middle w3-display-hover">
-                <button class="w3-button w3-black" onclick="showindexP(); hidehistory(); hideproductP()">Buy now <i class="fa fa-shopping-cart"></i></button>
+                <button class="w3-button w3-black" onclick="showindexP(); hidehistory(); hideproductP();hideindex2P();hideindex3P();">Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
           </div>
         </div>
@@ -193,7 +347,7 @@ html {
             <div class="w3-display-topleft w3-black w3-padding">Nike</div>
             <img id="shoe2" src="img/nike.jpg" alt="House" style="width:100%">
             <div class="w3-display-middle w3-display-hover">
-                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                <button class="w3-button w3-black" onclick="showindex2P(); hideindexP(); hidehistory(); hideproductP();hideindex3P();">Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
           </div>
         </div>
@@ -202,7 +356,7 @@ html {
             <div class="w3-display-topleft w3-black w3-padding">Adidas</div>
             <img id="shoe3" src="img/adi.jpg" alt="House" style="width:100%">
             <div class="w3-display-middle w3-display-hover">
-                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                <button class="w3-button w3-black" >Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
           </div>
         </div>
@@ -241,7 +395,7 @@ html {
             <div class="w3-display-topleft w3-black w3-padding">Vans</div>
             <img id="shoe7" src="img/vans.jpg" alt="House" style="width:99%">
             <div class="w3-display-middle w3-display-hover">
-                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                <button class="w3-button w3-black" onclick="hideindex2P(); hideindexP(); hidehistory(); hideproductP();showindex3P()">Buy now <i class="fa fa-shopping-cart"></i></button>
             </div>
           </div>
         </div>
