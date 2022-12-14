@@ -25,9 +25,9 @@ html {
   <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     	<!-- Cart -->
-    	<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0; width: 30%;" id="rightMenu">
+    	<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:10px; width: 25%;" id="rightMenu">
     	  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-        <button onclick="ttlCart()" class="w3-bar-item w3-button " ><h2>Checkout!</h2></button>      
+        <button  onclick="ttlCart()"  class="w3-bar-item w3-button" ><h2>Checkout!</h2></button>      
         <div id="addCart">
       	  <!-- <a id="cart6" class="w3-bar-item w3-button"><img src="img/NB.jpg" style="height:70px"><input id="carti6"type="hidden" value="NB 10~11">&ensp;NB10~11<button onclick="deleteCart(6);deleteCart1();" class="w3-bar-item w3-button ">&ensp; &emsp; &emsp; &emsp;   - delete &times;</button></a> -->
         </div>
@@ -35,7 +35,7 @@ html {
       <!-- End Cart -->
       <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="Info">
         <button onclick="closeInfo()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-          <a  class="w3-bar-item w3-button" onclick="showhistory();hideindexP();hideproductP();" >History</a>
+          <a  class="w3-bar-item w3-button" onclick="showhistory();hideindexP();hideproductP();closeInfo();" >History</a>
           <a href="index.html" class="w3-bar-item w3-button" >Sign out</a>
       </div>
       <a type="button" onclick="showproductP();hideindexP();hidehistory()" class="w3-bar-item w3-button"><b>DS</b> daShoes</a>
@@ -44,8 +44,8 @@ html {
       <!-- Float links to the right. Hide them on small screens -->
       <div class="w3-right w3-hide-small">
         <a class="w3-bar-item w3-button"  onclick="openRightMenu()">Cart<i class="fa fa-shopping-cart"></i></a>
-        <a id="logtext"  class="w3-bar-item w3-button"style="display:block">Login</a>
-        <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:none"></a>
+        <a id="logtext"  class="w3-bar-item w3-button"style="display:none">Login</a>
+        <a id="logafter" class="w3-bar-item w3-button" onclick="afterLog()" style="display:block">Nogi</a>
       </div>
     </div>
   </div>
@@ -55,13 +55,22 @@ html {
 
 
   <!-- History -->
-  <div id="history" style="display:none;">      
-    <div class=" w3-bar-block w3-card w3-animate-right" >
-      <button onclick="" class="w3-bar-item w3-button " id=""><h1 id="timeDate"></h1>total:<h1 id="ttlMoney"></h1>
-      </button>
-      <div id="addCartCopy">
 
-      </div>
+        
+
+  <div id="history" style="display:none;">   
+
+    <div class=" w3-bar-block w3-card w3-animate-right" >      
+      <button onclick="" class="w3-bar-item w3-button " id=""><h1 ></h1>total:<h1 ></h1>  </button>
+        <div class="w3-bar-block w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="" alt="結帳" class="w3-left w3-circle w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity" ><a id="timeDate"></a></span>
+          <input id="ttlMoneyC" type="hidden" value="0"><h4 id="ttlMoney"></h4><br>
+          <hr class="w3-clear">
+          <div id="addCartCopy">
+
+          </div>
+        </div>
     </div>
   </div>
     <!-- End History -->
@@ -262,76 +271,80 @@ html {
 
 
   <!-- Script -->
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
-    import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-    import { getDatabase, set, ref ,push, child, onValue} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
 
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyC6i5KvB8zgd0gqLyJ7NVsLWDazzwi5cqk",
-      authDomain: "dashoes-a68a9.firebaseapp.com",
-      projectId: "dashoes-a68a9",
-      storageBucket: "dashoes-a68a9.appspot.com",
-      messagingSenderId: "202899248777",
-      appId: "1:202899248777:web:a62bb5b00d9208ed3d5858",
-      measurementId: "G-0M4NWTWL7P"
-      // The value of `databaseURL` depends on the location of the database
-    databaseURL: "https://dashoes-a68a9.firebaseio.com",
-    };
+  import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+  import { getDatabase, set, ref ,push, child, onValue} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const provider = GoogleAuthProvider(app);
-    const auth = getAuth(app);
-    // Initialize Realtime Database and get a reference to the service
-    const database = getDatabase(app);
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC6i5KvB8zgd0gqLyJ7NVsLWDazzwi5cqk",
+    authDomain: "dashoes-a68a9.firebaseapp.com",
+    databaseURL: "https://dashoes-a68a9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "dashoes-a68a9",
+    storageBucket: "dashoes-a68a9.appspot.com",
+    messagingSenderId: "202899248777",
+    appId: "1:202899248777:web:a62bb5b00d9208ed3d5858",
+    measurementId: "G-0M4NWTWL7P"
+  };
 
-
-   logtext.addEventListener('click',(e) => {
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const provider = new GoogleAuthProvider(app);
+  const auth = getAuth(app);
+  // Initialize Realtime Database and get a reference to the service
+  const database = getDatabase();
 
 
-  // sign in with popup tab
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      const logtext = document.getElementById("logtext");
-      const logafter = document.getElementById("logafter");
+ logtext.addEventListener('click',(e) => {
 
 
-    if (user) {
-      alert('Welcome, '+user.displayName+'!');
-      logtext.style.display = "none";
-      logafter.style.display = "block";
-      logafter.innerHTML = user.displayName;
-    } else {
-      alert(nope);
-    }
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
-      alert(errorMessage);
-    });
-   }); 
-  </script>
+// sign in with popup tab
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    const logtext = document.getElementById("logtext");
+    const logafter = document.getElementById("logafter");
+
+
+  if (user) {
+    alert('Welcome, '+user.displayName+'!');
+    logtext.style.display = "none";
+    logafter.style.display = "block";
+    logafter.innerHTML = user.displayName;
+  } else {
+    alert(nope);
+  }
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+    alert(errorMessage);
+  });
+ });
+
+
+  
+</script>
 
   <script type="text/javascript" src="js/product.js"></script>
+  <script  src="js/db.js"></script>
 
 </body>
 </html>
